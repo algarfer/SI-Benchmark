@@ -1,6 +1,6 @@
 # Examples
 
-<div style="text-align: justify;">
+<div align="justify">
     <ol>
         <li>TSP</li>
     </ol>

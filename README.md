@@ -3,7 +3,7 @@
     <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
 </div>
 
-<p style="text-align: justify;">
+<p align="justify">
     <b>SI-Benchmark</b> is a Python project designed to automate the generation of CSV files with the execution results of
     various intelligent algorithms.
 </p>
@@ -19,7 +19,7 @@
 
 ### Installation
 
-<p style="text-align: justify;">
+<p align="justify">
     To install the project, you need to have Python installed on your system. Follow these steps to set up the environment:
 </p>
 
@@ -36,7 +36,7 @@ pip install -r requirements.txt
 
 ### Base code
 
-<div style="text-align: justify;">
+<div align="justify">
     <p>Place the algorithm code inside the benchmarking/code folder.</p>
     <p>
         For students of the <i>Sistemas Inteligentes</i> course at the <i>Universidad de Oviedo</i>, the Python code provided in the course's
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ### Creating tasks
 
-<div style="text-align: justify;">
+<div align="justify">
     <p>Each algorithm should be encapsulated in a task.</p>
     <p>A task can include more than just the algorithm code. The output of the task will be captured by the script and stored in a temporary file for further processing.</p>
     <p>Each task must be a Python function with the followingn naming structure:</p>
@@ -59,7 +59,7 @@ def task_filter_n():
     pass
 ```
 
-<p style="text-align: justify;">
+<p align="justify">
     Where <tt>filter</tt> is an alphanumeric string used to filter tasks and <tt>n</tt> is a unique identifier for the task.
     This filter is helpful whe using the <tt>run</tt> method of the <tt>Benchmark</tt> class to specify which tasks to execute.
 </p>
@@ -70,7 +70,7 @@ def task_filter_n():
 
 ### Custom classes
 
-<div style="text-align: justify;">
+<div align="justify">
     <p>
         To process the output of tasks and save it in a CSV file, you'll need to create a custom class that inherits from the <tt>Benchmark</tt> class.
     </p>
@@ -81,7 +81,7 @@ def task_filter_n():
 
 ### Specifying the saved data
 
-<div style="text-align: justify;">
+<div align="justify">
     <p>You need to provide a dictionary of strings to the <tt>Benchmark</tt> class, where:</p>
     <ul>
         <li><tt>Keys</tt>: Used in the <tt>_process</tt> method to access the task's output.</li>
@@ -92,7 +92,7 @@ def task_filter_n():
 
 ### Running the project
 
-<div style="text-align: justify;">
+<div align="justify">
     <p>
         Once you've created the tasks and custom class, process the tasks by creating an instance of the custom class and calling
         the <tt>run</tt> method in a file such as <tt>main.py</tt>, located in the <tt>benchmarking</tt> folder.
@@ -104,7 +104,7 @@ def task_filter_n():
 python -m benchmarking.main
 ```
 
-<p style="text-align: justify;">
+<p align="justify">
     Make sure to import the necessary task modules in your <tt>main.py</tt> file:
 </p>
 
