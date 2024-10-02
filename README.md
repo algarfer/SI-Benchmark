@@ -1,12 +1,12 @@
-<style>body {text-align: justify}</style>
-
 <div align="center">
     <h1>SI-Benchmark</h1>
     <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
 </div>
 
-**SI-Benchmark** is a Python project designed to automate the generation of CSV files with the execution results of
-various intelligent algorithms.
+<p style="text-align: justify;">
+    <b>SI-Benchmark</b> is a Python project designed to automate the generation of CSV files with the execution results of
+    various intelligent algorithms.
+</p>
 
 ## Table of Contents
 
@@ -18,7 +18,10 @@ various intelligent algorithms.
 6. [Running the project](#running-the-project)
 
 ### Installation
-To install the project, you need to have Python installed on your system. Follow these steps to set up the environment:
+
+<p style="text-align: justify;">
+    To install the project, you need to have Python installed on your system. Follow these steps to set up the environment:
+</p>
 
 ```bash
 python -m venv .venv
@@ -32,26 +35,34 @@ pip install -r requirements.txt
 > If you wish to run specific algorithms, ensure to install the required dependencies for those algorithms separately.
 
 ### Base code
-Place the algorithm code inside the benchmarking/code folder.
 
-For students of the _Sistemas Inteligentes_ course at the _Universidad de Oviedo_, the Python code provided in the course's
-Jupyter Notebooks (based on the [AIMA](https://github.com/aimacode/aima-python) code) should be placed here. You can organize
-this code into a single Python file or multiple files. To steamline usage, export functions and variables via the `__init__.py` file.
+<div style="text-align: justify;">
+    <p>Place the algorithm code inside the benchmarking/code folder.</p>
+    <p>
+        For students of the <i>Sistemas Inteligentes</i> course at the <i>Universidad de Oviedo</i>, the Python code provided in the course's
+        Jupyter Notebooks (based on the <a href="https://github.com/aimacode/aima-python">AIMA</a> code) should be placed here. You can organize
+        this code into a single Python file or multiple files. To steamline usage, export functions and variables via the <tt>__init__.py</tt> file.
+    </p>
+</div>
 
 ### Creating tasks
-Each algorithm should be encapsulated in a task.
 
-A task can include more than just the algorithm code. The output of the task will be captured by the script and stored in a temporary file for further processing.
+<div style="text-align: justify;">
+    <p>Each algorithm should be encapsulated in a task.</p>
+    <p>A task can include more than just the algorithm code. The output of the task will be captured by the script and stored in a temporary file for further processing.</p>
+    <p>Each task must be a Python function with the followingn naming structure:</p>
+</div>
 
-Each task must be a Python function with the followingn naming structure:
 ```python
 def task_filter_n():
     # Code
     pass
 ```
 
-Where `filter` is an alphanumeric string used to filter tasks and `n` is a unique identifier for the task.
-This filter is helpful whe using the `run` method of the `Benchmark` class to specify which tasks to execute.
+<p style="text-align: justify;">
+    Where <tt>filter</tt> is an alphanumeric string used to filter tasks and <tt>n</tt> is a unique identifier for the task.
+    This filter is helpful whe using the <tt>run</tt> method of the <tt>Benchmark</tt> class to specify which tasks to execute.
+</p>
 
 > [!TIP]
 > If you need to save additional data beyond the algorithm's output, you can include extra `print` statements inside the task,
@@ -59,33 +70,49 @@ This filter is helpful whe using the `run` method of the `Benchmark` class to sp
 
 ### Custom classes
 
-To process the output of tasks and save it in a CSV file, you'll need to create a custom class that inherits from the `Benchmark` class.
-
-In your custom class, implement the `_process` method to handle the task output and specify how to save it into the CSV.
+<div style="text-align: justify;">
+    <p>
+        To process the output of tasks and save it in a CSV file, you'll need to create a custom class that inherits from the <tt>Benchmark</tt> class.
+    </p>
+    <p>
+        In your custom class, implement the <tt>_process</tt> method to handle the task output and specify how to save it into the CSV.
+    </p>
+</div>
 
 ### Specifying the saved data
-You need to provide a dictionary of strings to the `Benchmark` class, where:
-- `Keys`: Used in the `_process` method to access the task's output.
-- `Values`: Used as headers for the CSV file.
 
-These keys can also be employed to filter data in the temporary output file using string matching or regex.
+<div style="text-align: justify;">
+    <p>You need to provide a dictionary of strings to the <tt>Benchmark</tt> class, where:</p>
+    <ul>
+        <li><tt>Keys</tt>: Used in the <tt>_process</tt> method to access the task's output.</li>
+        <li><tt>Values</tt>: Used as headers for the CSV file.</li>
+    </ul>
+    <p>These keys can also be employed to filter data in the temporary output file using string matching or regex.</p>
+</div>
 
 ### Running the project
-Once you've created the tasks and custom class, process the tasks by creating an instance of the custom class and calling
-the `run` method in a file such as `main.py`, located in the `benchmarking` folder.
 
-To run the project, navigate to the parent directory and execute the script with the following command:
+<div style="text-align: justify;">
+    <p>
+        Once you've created the tasks and custom class, process the tasks by creating an instance of the custom class and calling
+        the <tt>run</tt> method in a file such as <tt>main.py</tt>, located in the <tt>benchmarking</tt> folder.
+    </p>
+    <p>To run the project, navigate to the parent directory and execute the script with the following command:</p>
+</div>
+
 ```bash
 python -m benchmarking.main
 ```
 
-Make sure to import the necessary task modules in your `main.py` file:
+<p style="text-align: justify;">
+    Make sure to import the necessary task modules in your <tt>main.py</tt> file:
+</p>
+
 ```python
 from .tasks import tasks
 
 benchmark = Benchmark(..., tasks, ...)
 ```
-
 ---
 
 > [!NOTE]
